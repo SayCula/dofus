@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Color Extractor</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <style>
+        body::after {
+        content: "";
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        background-color: #ed2ff0;
+        left: 5%;
+        top: 20%;
+        filter: blur(150px);
+        pointer-events: none;
+        }
+        body::before {
+            content: "";
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background-color: #c55151;
+            left: 90%;
+            top: 74%;
+            filter: blur(150px);
+            pointer-events: none;
+        }
+        #imageContainer {
+            position: relative;
+        }
+        #colorDisplay {
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            margin-top: 10px;
+        }
+        .main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            align-content: center;
+            height: 45rem;
+
+        }
+        .imageInput {
+            cursor: pointer;
+            padding: 9px 35px;
+            margin: 10px;
+            background: none;
+            border: white 1px solid;
+            border-radius: 10px;
+            color: white;
+            transition: all 0.3s;
+        }
+        .imageInput:hover {
+            background: white;
+            color: rgb(0, 0, 0);
+        }
+
+        /* Style the color picker input */
+        input[type="color"] {
+            background: none;
+            width: 6rem;
+            height: 3rem;
+           cursor: pointer;
+            border: none;
+        }
+
+        /* Style the color picker icon */
+        input[type="color"]::-webkit-color-swatch {
+        
+        }
+
+        /* Style the color picker thumb (marker inside the color picker) */
+        input[type="color"]::-webkit-color-swatch-wrapper {
+
+        }
+
+        .colorPicker {
+            margin: 20px;
+        }
+
+        .loadCol-Pik {
+            display: flex;
+            align-items: center;
+            flex-wrap: nowrap;
+            flex-direction: row;
+        }
+        
+        img {
+        -webkit-filter: drop-shadow(5px 5px 5px #222);
+        filter: drop-shadow(5px 5px 5px #222);
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        }
+
+        .image-container {
+        text-align: center;
+        }
+
+        #loadedImage {
+        object-fit: contain;
+        max-width: 100%;
+        max-height: 100%;
+        transition: all 0.3s ease-in-out;
+        }
+
+        .controls {
+        margin: 20px;
+        }
+
+        input[type="range"] {
+        width: 30%;
+        }
+
+        div#CodeColor {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+            flex-wrap: nowrap;
+        }
+        button#copyButton {
+            font-family: 'Cairo', sans-serif;
+            cursor: pointer;
+            padding: 12px 60px;
+            margin: 10px;
+            background: none;
+            border: white 1px solid;
+            border-radius: 10px;
+            color: white;
+            transition: all 0.3s;
+        }
+        button#copyButton:hover {
+            background: white;
+            color: rgb(0, 0, 0);
+        }
+        .img-ve {
+            display: flex;
+            width: 800px;
+            height: 438px;
+            align-items: center;
+            justify-content: center;
+        }
+        header {
+            display: flex;
+            background-color: #222;
+            padding: 5px 10px;
+            border-radius: 10px;
+            margin: 15px;
+            width: 50%;
+        }
+        header a {
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+            padding: 8px 10px;
+            transition: all 0.3s;
+        }
+        header a:hover{
+            background-color: white;
+            color: #222;
+        }
+        h1#printColor {
+            text-shadow: 1px 3px 0px black;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="main">
+    <header>
+        <a href="/index.html">Back To Home</a>
+        <a href="http://">Back To Home</a>
+    </header>
+
+
+    <div id="imageContainer">
+        <div class="img-ve">
+            <img id="loadedImage" src="" >
+            <div id="myresult" class="img-zoom-result"></div>
+        </div> 
+    </div>
+
+    <div class="loadCol-Pik">
+        
+        <div id="img-inpt">
+            <label for="imageInput" class="imageInput">upload image</label>
+            <input type="file" style="display: none;" id="imageInput" accept="image/*">
+        </div>
+    
+        <!-- Color Picker -->
+        <div class="colorPicker">
+            <input type="color" id="colorPicker">
+            
+        </div>
+    </div>
+    <div>
+        <div id="CodeColor">
+            <h1 id="printColor">#000000</h1>
+            <button id="copyButton">Copy</button>
+            <h1 id="printColorRgb"></h1>
+        </div>
+        
+
+    </div>
+    
+    <script>
+        document.getElementById("copyButton").addEventListener("click", function () {
+          var textToCopy = document.getElementById("printColor");
+          var text = textToCopy.textContent;
+        
+          // Create a temporary textarea element to copy the text
+          var tempTextarea = document.createElement("textarea");
+          tempTextarea.value = text;
+          document.body.appendChild(tempTextarea);
+          tempTextarea.select();
+          document.execCommand("copy");
+          document.body.removeChild(tempTextarea);
+        
+          // Update the button text temporarily
+          var originalText = this.innerHTML;
+          this.innerHTML = "Copied!";
+          setTimeout(function () {
+            document.getElementById("copyButton").innerHTML = originalText;
+          }, 1000);
+        });
+        
+        </script>
+    
+</div>
+<script src="script.js"></script>
+
+    
+    
+    
+    
+    
+    <script>
+
+
+
+    // Get elements from the DOM
+const imageInput = document.getElementById('imageInput');
+const loadedImage = document.getElementById('loadedImage');
+const colorPicker = document.getElementById('colorPicker');
+const printColor = document.getElementById('printColor');
+const printColorRgb = document.getElementById('printColorRgb');
+
+colorPicker.addEventListener('change',function () {
+    var colors=hexToRGB(colorPicker.value)
+    const {red,green,blue}=colors
+    printColor.innerHTML=`${colorPicker.value}`
+    
+})
+function hexToRGB(hex) {
+    // Remove the '#' symbol if present
+    hex = hex.replace('#', '');
+
+    // Parse the hexadecimal values for red, green, and blue
+    const red = parseInt(hex.substring(0, 2), 16);
+    const green = parseInt(hex.substring(2, 4), 16);
+    const blue = parseInt(hex.substring(4, 6), 16);
+
+    return { red, green, blue };
+}
+
+
+
+// Add event listener to the input element
+imageInput.addEventListener('change', function (event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+            loadedImage.src = e.target.result;
+        };
+
+        reader.readAsDataURL(file);
+    }
+});
+
+// Add event listener to the image element
+loadedImage.addEventListener('load', function () {
+    const canvas = document.createElement('canvas');
+    canvas.width = loadedImage.width;
+    canvas.height = loadedImage.height;
+
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(loadedImage, 0, 0, loadedImage.width, loadedImage.height);
+
+    // Add event listener to the color picker
+    // colorPicker.addEventListener('input', function () {
+    //     const x = event.offsetX;
+    //     const y = event.offsetY;
+
+    //     //const imageData = ctx.getImageData(x, y, 1, 1);
+    //    // const pixel = imageData.data;
+
+    //     // const red = pixel[0];
+    //     // const green = pixel[1];
+    //     // const blue = pixel[2];
+
+    //     // const color = `rgb(${red}, ${green}, ${blue})`;
+
+       
+    //     // colorPicker.value = color;
+    //     // console.log(color)
+    // });
+});
+
+</script>
+
+
+</body>
+</html>
