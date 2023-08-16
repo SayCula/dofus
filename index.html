@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="pngegg.png" type="image/x-icon">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200&display=swap" rel="stylesheet">
+    <!-- styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magic/1.1.0/magic.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- styles -->
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <style>
+       body::after {
+        content: "";
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        background-color: #ed2ff0;
+        left: 5%;
+        top: 20%;
+        filter: blur(150px);
+        pointer-events: none;
+        }
+        body::before {
+            content: "";
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background-color: #c55151;
+            left: 90%;
+            top: 74%;
+            filter: blur(150px);
+            pointer-events: none;
+        }
+
+        div#main {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 30rem;
+            width: 100%;
+        }
+        #targetElement{
+            display: flex;
+            text-decoration: none;
+            padding: 0px 10px 5px 4px;
+            font-weight: bold;
+            border: var(--whitesmoke) 3px solid;
+            border-radius: 0 19px 18px 0;
+            background-color: var(--whitesmoke);
+            color: #2c2c2c;
+            cursor: pointer;
+            align-content: center;
+            align-items: center;
+
+        }
+        input[type=text] {
+            position: relative;
+            right: -1px;
+            width: 100%;
+            padding: 12px 20px;
+            border: var(--whitesmoke) 2px solid;
+            border-radius: 19px 0 0 18px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            color: var(--whitesmoke);
+        }
+        input:focus {
+            border: var(--whitesmoke) 2px solid;
+            background: none;
+            padding: 11px 20px;
+        }
+        input:focus::placeholder {
+            color: #796f6f;
+        }
+        img {
+            width: 30%;
+            -webkit-filter: drop-shadow(5px 5px 5px #222);
+            filter: drop-shadow(5px 5px 0px #222);
+            -webkit-filter: brightness(10) saturate(100%) grayscale(1);
+            filter: brightness(10) saturate(100%) grayscale(1);
+        }
+        div#search {
+            width: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+        }  
+        #inpt-search {
+            width: 100%;
+        }
+        header {
+            margin: 20px;
+        }
+        header a {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            padding: 10px 5px;
+        }
+        #right {
+            float: right;
+        }
+        #para {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="">
+            <icon>
+                <lord-icon
+                    src="https://cdn.lordicon.com/rjzlnunf.json"
+                    trigger="hover"
+                    colors="primary:#f49cc8,secondary:#e83a30"
+                    style="width:50px;">
+                </lord-icon>
+            </icon>
+            </a>
+        <a href="">
+            <icon>
+                <lord-icon
+                    src="https://cdn.lordicon.com/tgnqhsfe.json"
+                    trigger="hover"
+                    colors="primary:#f49cc8,secondary:#e83a30"
+                    style="width:50px;">
+                </lord-icon>
+            </icon>
+        </a>
+        <a href="">
+            <icon>
+                <lord-icon
+                    src="https://cdn.lordicon.com/ofbvmdiz.json"
+                    trigger="hover"
+                    colors="primary:#f49cc8,secondary:#e83a30"
+                    style="width:50px;">
+                </lord-icon>
+            </icon>
+        </a>
+        <div id="right">
+            <a href="/colorPicker.html">Color Picker</a>
+            <a href="">test</a>
+            <a href="">test</a>
+        </div>
+    </header>
+<!-- HTML -->
+<div id="main">
+
+
+    
+
+        <div id="logo">
+            <div class="magictime vanishIn">
+                <img src="pngegg.png" class="animate__animated animate__pulse animate__repeat-2 animate__delay-1s" alt="logo">
+            </div>
+        </div>
+        <div id="para">
+            <p class="animate__animated animate__delay-3s animate__flipInX">Saycula#0000</p>
+        </div>
+        <div id="search">
+
+            <div id="inpt-search">
+                    <input type="text" id="inputElement" placeholder="My Pseudo"/>
+            </div>
+            <div id="btn-search">
+                    <a target="_blank" href="https://account.ankama.com/fr/profil-ankama/" alt="Chercher" id="targetElement">
+                       
+                        <lord-icon 
+                            src="https://cdn.lordicon.com/msoeawqm.json"
+                            trigger="hover"
+                            trigger="loop"
+                            delay="7000"
+                            colors="primary:#121331,secondary:#08a88a"
+                            style="width:50px;">
+                        </lord-icon>
+                    </a>
+            </div>
+
+        </div>
+
+       
+
+</div>
+<script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+    <script>
+        // JavaScript
+const inputElement = document.getElementById('inputElement');
+const targetElement = document.getElementById('targetElement');
+
+inputElement.addEventListener('input', function() {
+  const value = inputElement.value;
+  const defaultHref = targetElement.getAttribute('href');
+
+  // Replace hash symbols with dashes
+  const modifiedValue = value.replace(/#/g, '-');
+
+  targetElement.href = defaultHref + modifiedValue;
+});
+
+    </script>
+</body>
+</html>
