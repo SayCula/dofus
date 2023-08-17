@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SayCula - Image Color Picker</title>
@@ -18,19 +19,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magic/1.1.0/magic.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <!-- Styles -->
-    <link rel="stylesheet" href="./styles/styles.css">
-    <link rel="stylesheet" href="./styles/colorpicker.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/ColorPicker.css">
+
 </head>
 <body>
-<div class="main">
-    <header>
-        <a href="./index.html">Back To Home</a>
+<div class="main-ColorPicker">
+    <header id="header-ColorPicker">
+        <a href="/index.html">Back To Home</a>
     </header>
 
 
     <div id="imageContainer">
         <div class="img-ve">
-            <img id="loadedImage" src="./imgs/Image-ColorPicker.png">
+            <img id="loadedImage" src="./imgs/Image-ColorPicker.png" >
             <div id="myresult" class="img-zoom-result"></div>
         </div> 
     </div>
@@ -58,112 +60,12 @@
 
     </div>
     
-    <script>
-        document.getElementById("copyButton").addEventListener("click", function () {
-          var textToCopy = document.getElementById("printColor");
-          var text = textToCopy.textContent;
-        
-          // Create a temporary textarea element to copy the text
-          var tempTextarea = document.createElement("textarea");
-          tempTextarea.value = text;
-          document.body.appendChild(tempTextarea);
-          tempTextarea.select();
-          document.execCommand("copy");
-          document.body.removeChild(tempTextarea);
-        
-          // Update the button text temporarily
-          var originalText = this.innerHTML;
-          this.innerHTML = "Copied!";
-          setTimeout(function () {
-            document.getElementById("copyButton").innerHTML = originalText;
-          }, 1000);
-        });
-        
-        </script>
+  
     
 </div>
-<script src="script.js"></script>
 
-    
-    
-    
-    
-    
-    <script>
-
-
-
-    // Get elements from the DOM
-const imageInput = document.getElementById('imageInput');
-const loadedImage = document.getElementById('loadedImage');
-const colorPicker = document.getElementById('colorPicker');
-const printColor = document.getElementById('printColor');
-const printColorRgb = document.getElementById('printColorRgb');
-
-colorPicker.addEventListener('change',function () {
-    var colors=hexToRGB(colorPicker.value)
-    const {red,green,blue}=colors
-    printColor.innerHTML=`${colorPicker.value}`
-    
-})
-function hexToRGB(hex) {
-    // Remove the '#' symbol if present
-    hex = hex.replace('#', '');
-
-    // Parse the hexadecimal values for red, green, and blue
-    const red = parseInt(hex.substring(0, 2), 16);
-    const green = parseInt(hex.substring(2, 4), 16);
-    const blue = parseInt(hex.substring(4, 6), 16);
-
-    return { red, green, blue };
-}
-
-
-
-// Add event listener to the input element
-imageInput.addEventListener('change', function (event) {
-    const file = event.target.files[0];
-    if (file) {
-        const reader = new FileReader();
-
-        reader.onload = function (e) {
-            loadedImage.src = e.target.result;
-        };
-
-        reader.readAsDataURL(file);
-    }
-});
-
-// Add event listener to the image element
-loadedImage.addEventListener('load', function () {
-    const canvas = document.createElement('canvas');
-    canvas.width = loadedImage.width;
-    canvas.height = loadedImage.height;
-
-    const ctx = canvas.getContext('2d');
-    ctx.drawImage(loadedImage, 0, 0, loadedImage.width, loadedImage.height);
-
-    // Add event listener to the color picker
-    // colorPicker.addEventListener('input', function () {
-    //     const x = event.offsetX;
-    //     const y = event.offsetY;
-
-    //     //const imageData = ctx.getImageData(x, y, 1, 1);
-    //    // const pixel = imageData.data;
-
-    //     // const red = pixel[0];
-    //     // const green = pixel[1];
-    //     // const blue = pixel[2];
-
-    //     // const color = `rgb(${red}, ${green}, ${blue})`;
-
-       
-    //     // colorPicker.value = color;
-    //     // console.log(color)
-    // });
-});
-
-</script>
+<script src="./scripts/colorpicker/btn-copy.js"></script>
+<script src="./scripts/colorpicker/colorpicker.js"></script>
 
 
 </body>
