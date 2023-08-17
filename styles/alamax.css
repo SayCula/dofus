@@ -1,0 +1,21 @@
+#main-alamnx {
+    background-color: #d4d4d463;
+    width: 100%;
+    height: 51rem;
+}
+#alamax {
+    background-image: url(/imgs/bg-keyart.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100%;
+    position: relative;
+    height: 40rem;
+}
+#alam-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

@@ -1,0 +1,26 @@
+.arrow-down {
+    display: flex;
+    position: relative;
+    bottom: 0px;
+    font-size: 50px;
+    width: 100%;
+    height: 102px;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+.arrow-down img {
+    width: 4%;
+    filter: invert(100%);
+    transition: all 0.5s;
+}
+.arrow-down img:hover {
+    width: 4%;
+    filter: drop-shadow(2px 4px 6px rgb(255, 176, 176));
+}
+
+.arrow-down a {
+    width: 100%;
+}
