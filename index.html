@@ -4,166 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SayCula</title>
-    <link rel="shortcut icon" href="./pngegg.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./imgs/icon.png" type="image/x-icon">
     <!-- site -->
     <meta property="og:title" content="SayCula - Dofus">
     <meta property="og:description" content="Dofus">
-    <meta property="og:image" content="./pngegg.png">
+    <meta property="og:image" content="./imgs/icon.png">
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200&display=swap" rel="stylesheet">
-    <!-- styles -->
+    <!-- styles fm-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magic/1.1.0/magic.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <!-- styles -->
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/styles/header.css">
+    <link rel="stylesheet" href="./styles/styles/arrow-down.css">
+    <link rel="stylesheet" href="./styles/styles/search.css">
+    <link rel="stylesheet" href="./styles/styles/alamax.css">
 
-    <style>
-       body::after {
-        content: "";
-        position: absolute;
-        width: 120px;
-        height: 120px;
-        background-color: #ed2ff0;
-        left: 5%;
-        top: 20%;
-        filter: blur(150px);
-        pointer-events: none;
-        }
-        body::before {
-            content: "";
-            position: absolute;
-            width: 120px;
-            height: 120px;
-            background-color: #c55151;
-            left: 90%;
-            top: 74%;
-            filter: blur(150px);
-            pointer-events: none;
-        }
-
-        div#main {
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            height: 30rem;
-            width: 100%;
-        }
-        #targetElement{
-            display: flex;
-            text-decoration: none;
-            padding: 0px 10px 5px 4px;
-            font-weight: bold;
-            border: var(--whitesmoke) 3px solid;
-            border-radius: 0 19px 18px 0;
-            background-color: var(--whitesmoke);
-            color: #2c2c2c;
-            cursor: pointer;
-            align-content: center;
-            align-items: center;
-
-        }
-        input[type=text] {
-            position: relative;
-            right: -1px;
-            width: 100%;
-            padding: 12px 20px;
-            border: var(--whitesmoke) 2px solid;
-            border-radius: 19px 0 0 18px;
-            margin: 8px 0;
-            box-sizing: border-box;
-            color: var(--whitesmoke);
-        }
-        input:focus {
-            border: var(--whitesmoke) 2px solid;
-            background: none;
-            padding: 11px 20px;
-        }
-        input:focus::placeholder {
-            color: #796f6f;
-        }
-        img {
-            width: 30%;
-            -webkit-filter: drop-shadow(5px 5px 5px #222);
-            filter: drop-shadow(5px 5px 0px #222);
-            -webkit-filter: brightness(10) saturate(100%) grayscale(1);
-            filter: brightness(10) saturate(100%) grayscale(1);
-        }
-        div#search {
-            width: 40%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 10px;
-        }  
-        #inpt-search {
-            width: 100%;
-        }
-        header {
-            margin: 20px;
-        }
-        header a {
-            text-decoration: none;
-            color: white;
-            font-size: 20px;
-            padding: 10px 5px;
-        }
-        #right {
-            float: right;
-        }
-        #para {
-            margin: 5px;
-        }
-    </style>
+    
 </head>
 <body>
     <header>
-        <a href="">
-            <icon>
-                <lord-icon
-                    src="https://cdn.lordicon.com/rjzlnunf.json"
-                    trigger="hover"
-                    colors="primary:#f49cc8,secondary:#e83a30"
-                    style="width:50px;">
-                </lord-icon>
-            </icon>
+        <div id="left">
+            <a href="">
+                <icon>
+                    <lord-icon class="icons"
+                        src="https://cdn.lordicon.com/rjzlnunf.json"
+                        trigger="hover"
+                        colors="primary:#f49cc8,secondary:#e83a30"
+                        >
+                    </lord-icon>
+                </icon>
+                </a>
+            <a href="">
+                <icon>
+                    <lord-icon class="icons"
+                        src="https://cdn.lordicon.com/tgnqhsfe.json"
+                        trigger="hover"
+                        colors="primary:#f49cc8,secondary:#e83a30"
+                        >
+                    </lord-icon>
+                </icon>
             </a>
-        <a href="">
-            <icon>
-                <lord-icon
-                    src="https://cdn.lordicon.com/tgnqhsfe.json"
-                    trigger="hover"
-                    colors="primary:#f49cc8,secondary:#e83a30"
-                    style="width:50px;">
-                </lord-icon>
-            </icon>
-        </a>
-        <a href="">
-            <icon>
-                <lord-icon
-                    src="https://cdn.lordicon.com/ofbvmdiz.json"
-                    trigger="hover"
-                    colors="primary:#f49cc8,secondary:#e83a30"
-                    style="width:50px;">
-                </lord-icon>
-            </icon>
-        </a>
+            <a href="">
+                <icon>
+                    <lord-icon class="icons"
+                        src="https://cdn.lordicon.com/ofbvmdiz.json"
+                        trigger="hover"
+                        colors="primary:#f49cc8,secondary:#e83a30"
+                        >
+                    </lord-icon>
+                </icon>
+            </a>
+        </div>
         <div id="right">
             <a href="./colorPicker.html">Color Picker</a>
+            <a href="#main-alamnx">almanax</a>
         </div>
     </header>
 <!-- HTML -->
-<div id="main">
+<div id="main-top">
 
-
-    
-
-        <div id="logo">
+        <div class="logo">
             <div class="magictime vanishIn">
-                <img src="pngegg.png" class="animate__animated animate__pulse animate__repeat-2 animate__delay-1s" alt="logo">
+                <img id="logo" src="./imgs/pngegg.png" class="animate__animated animate__pulse animate__repeat-2 animate__delay-1s" alt="logo">
             </div>
         </div>
         <div id="para">
@@ -189,10 +95,31 @@
             </div>
 
         </div>
-
-       
-
 </div>
+    <div class="arrow-down">
+        <a href="#main-alamnx">
+        <img src="./imgs/arrow-down.png" alt="arrow-down" >
+    </a>
+    </div>
+
+
+    <div id="main-alamnx">
+        <!-- Alamn x -->
+        <div id="alamax">
+            <div id="alam-center">
+                <div class="ls-alam">
+
+                <img src="./imgs/icon.png" alt="item" srcset="">
+                <div class="data-alam">
+                    <h1>Almanax du <span>2023-08-17</span></h1>
+                    <h3><span>x4</span> fer</h3>
+                    <p>6 948K</p>
+
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
 <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
     <script>
         // JavaScript
