@@ -1,42 +1,143 @@
-#main-alamnx {
-    background-color: #d4d4d463;
-    width: 100%;
-    height: 51rem;
-}
-#alamax {
-    background-image: url(/imgs/bg-keyart.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    width: 100%;
+#imageContainer {
     position: relative;
-    height: 40rem;
 }
-#alam-center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+#colorDisplay {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    margin-top: 10px;
 }
-.ls-alam {
+.main-ColorPicker {
     display: flex;
-    justify-content: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    align-content: center;
+    height: 45rem;
+
+}
+.imageInput {
+    cursor: pointer;
+    padding: 9px 35px;
+    margin: 10px;
+    background: none;
+    border: white 1px solid;
+    border-radius: 10px;
+    color: white;
+    transition: all 0.3s;
+}
+.imageInput:hover {
+    background: white;
+    color: rgb(0, 0, 0);
+}
+
+/* Style the color picker input */
+input[type="color"] {
+    background: none;
+    width: 6rem;
+    height: 3rem;
+   cursor: pointer;
+    border: none;
+}
+
+/* Style the color picker icon */
+input[type="color"]::-webkit-color-swatch {
+
+}
+
+/* Style the color picker thumb (marker inside the color picker) */
+input[type="color"]::-webkit-color-swatch-wrapper {
+
+}
+
+.colorPicker {
+    margin: 20px;
+}
+
+.loadCol-Pik {
+    display: flex;
     align-items: center;
     flex-wrap: nowrap;
     flex-direction: row;
-    background-color: var(--bg-header);
-    border: 1px solid;
-    border-radius: 15px;
-    width: 100%;
 }
-.ls-alam img {
-    width: 30%;
-    margin: 20px;
+
+img {
+-webkit-filter: drop-shadow(5px 5px 5px #222);
+filter: drop-shadow(5px 5px 5px #222);
+display: block;
+margin-left: auto;
+margin-right: auto;
 }
-.data-alam {
+
+.image-container {
+text-align: center;
+}
+
+#loadedImage {
+object-fit: contain;
+max-width: 100%;
+max-height: 100%;
+transition: all 0.3s ease-in-out;
+}
+
+.controls {
+margin: 20px;
+}
+
+input[type="range"] {
+width: 30%;
+}
+
+div#CodeColor {
     display: flex;
-    margin: 20px;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+button#copyButton {
+    font-family: 'Cairo', sans-serif;
+    cursor: pointer;
+    padding: 12px 60px;
+    margin: 10px;
+    background: none;
+    border: white 1px solid;
+    border-radius: 10px;
+    color: white;
+    transition: all 0.3s;
+}
+button#copyButton:hover {
+    background: white;
+    color: rgb(0, 0, 0);
+}
+.img-ve {
+    display: flex;
+    width: 800px;
+    height: 438px;
+    align-items: center;
+    justify-content: center;
+}
+#header-ColorPicker {
+    display: flex;
+    background-color: #222;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin: 15px;
+    width: 50%;
+}
+#header-ColorPicker a {
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    padding: 8px 10px;
+    transition: all 0.3s;
+}
+#header-ColorPicker a:hover{
+    background-color: white;
+    color: #222;
+}
+h1#printColor {
+    text-shadow: 1px 3px 0px black;
 }
