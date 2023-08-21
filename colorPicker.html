@@ -10,7 +10,7 @@
     <!-- Site -->
     <meta property="og:title" content="SayCula - Dofus">
     <meta property="og:description" content="Dofus">
-    <meta property="og:image" content="https://saycula.github.io/dofus/imgs/icon.png">
+    <meta property="og:image" content="./imgs/icon.png">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,14 +19,81 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magic/1.1.0/magic.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <!-- Styles -->
-    <link rel="stylesheet" href="./styles/styles.css">
-    <link rel="stylesheet" href="./styles/colorpicker.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/ColorPicker.css">
 
+    <style>
+
+        #Help-ColorPicker { 
+            position: fixed;
+            left: 0;
+            top: 30%;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+
+        }
+        #help-Container {
+            display: none;
+            background-color: #ffffff05;
+            border-radius: 20px;
+            border: 1px solid #ffffff1f;
+            margin: 30px;
+            padding: 30px;
+            box-shadow: 1px 1px 6px 0px #ffffff;
+        }
+
+        button#Open-box {
+            position: fixed;
+            top: 35%;
+            left: 1%;
+            float: right;
+            background-color: #ffffff4d;
+            color: rgba(255, 255, 255, 0.747);
+            padding: 10px;
+            border: none;
+            border-radius: 20%;
+            transition: all 0.3s;
+        }
+        button#Open-box:hover {
+            background-color: white;
+            color: black;
+        }
+        button#close-box {
+            position: relative;
+            top: -20px;
+            left: -20px;
+            float: left;
+            padding: 0px 10px;
+            background-color: #e000254d;
+            color: #e00025;
+            padding: 10px;
+            border: none;
+            border-radius: 20%;
+            transition: all 0.3s;
+        }
+        button#close-box:hover {
+            background-color: #e00025;
+            color: rgb(255, 255, 255);
+        }
+        video {
+            max-width: 100%;
+            height: auto;
+        }
+
+    
+
+    </style>
 </head>
 <body>
-<div class="main-ColorPicker">
-    <header id="header-ColorPicker">
+   
+<div class="main-ColorPicker ">
+     <header id="header-ColorPicker">
         <a href="./index.html">Back To Home</a>
+        <a id="disabled" href="./index.html#main-alamnx">Almanax<span style="font-weight: bold; color: rgb(236, 0, 51);">SOON</span></a>
     </header>
 
 
@@ -42,15 +109,17 @@
         <div id="img-inpt">
             <label for="imageInput" class="imageInput">upload image</label>
             <input type="file" style="display: none;" id="imageInput" accept="image/*">
+            <!-- Color Picker -->
+            <div class="colorPicker">
+                <input type="color" id="colorPicker">
+                
+            </div>
         </div>
     
-        <!-- Color Picker -->
-        <div class="colorPicker">
-            <input type="color" id="colorPicker">
-            
-        </div>
     </div>
     <div>
+
+    
         <div id="CodeColor">
             <h1 id="printColor">#000000</h1>
             <button id="copyButton">Copy</button>
@@ -60,10 +129,50 @@
 
     </div>
     
-  
+    <div id="Help-ColorPicker">
+        <button id="Open-box" disabled class="animate__animated animate__headShake animate__delay-2s animate__slow animate__repeat-3" href="">help!</button>
+        
+        <div id="help-Container">
+      <button id="close-box">X</button> 
     
+
+        <p>This video for test</p>
+        <video controls src="./videos/test.mp4" style="width: 480px;"></video>
+  </div>
+</div>
 </div>
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // close btn katsd
+    const closeButton = document.getElementById("close-box");
+    // div lghadi ytsad
+    const box = document.getElementById("help-Container");
+    // open btn 
+    const OpenButton = document.getElementById("Open-box");
+
+    closeButton.addEventListener("click", function() {
+        // bash tclick 3la btn close mybqash yban div
+        box.style.display = "none";
+        // yban btn open btn
+        OpenButton.style.display = "block";
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const OpenButton = document.getElementById("Open-box");
+    const box = document.getElementById("help-Container");
+    
+    OpenButton.addEventListener("click", function() {
+        box.style.display = "block";
+        OpenButton.style.display = "none";
+    });
+});
+
+
+
+</script>
+<script src="./scripts/scripts.js"></script>
 <script src="./scripts/colorpicker/btn-copy.js"></script>
 <script src="./scripts/colorpicker/colorpicker.js"></script>
 

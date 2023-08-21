@@ -22,46 +22,98 @@
     <link rel="stylesheet" href="./styles/arrow-down.css">
     <link rel="stylesheet" href="./styles/search.css">
     <link rel="stylesheet" href="./styles/alamax.css">
+    <style>
+        #main-videos {
+           
+        }
+        #ls-videos {
+            background-image: url(./imgs/bg-inside1.jpg);
+            background-position: center;
+            background-repeat:  no-repeat;
+            background-size: cover;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            flex-direction: column;
+            flex-wrap: nowrap;
+        }
 
-    
+        #vid-one video{
+           position: relative;
+           right: -19rem;
+        }
+        #vid-one #vid-text{
+            position: relative;
+            top: 4rem;
+            left: -3rem;
+
+        }
+        #vid-one video{
+           position: relative;
+           right: -19rem;
+           top: -3rem;
+        }
+        #vid-two video{
+           position: relative;
+           right: -7rem;
+           top: -3rem;
+        }
+        #vid-two #vid-text{
+           position: relative;
+           top: 4rem;
+           left: -14rem;
+        }
+        #videos video {
+            width: 300px;
+
+        }
+        #main-news {
+            width: 100%;
+            text-align: center;
+            padding: 24rem 0;
+        }
+    </style>
 </head>
 <body>
     <header>
         <div id="left">
-            <a href="">
+            <a href="https://www.youtube.com/channel/UCUR_3u6dp7syRBREPz1xHsw" target="_blank">
                 <icon>
                     <lord-icon class="icons"
                         src="https://cdn.lordicon.com/rjzlnunf.json"
                         trigger="hover"
-                        colors="primary:#f49cc8,secondary:#e83a30"
+                        colors="primary:white,secondary:#e83a30"
                         >
                     </lord-icon>
                 </icon>
                 </a>
-            <a href="">
+            <a href="https://discord.gg/qufg48Zhtz" target="_blank">
                 <icon>
                     <lord-icon class="icons"
-                        src="https://cdn.lordicon.com/tgnqhsfe.json"
+                        src="https://cdn.lordicon.com/zpxybbhl.json"
                         trigger="hover"
-                        colors="primary:#f49cc8,secondary:#e83a30"
+                        colors="primary:white,secondary:#e83a30"
                         >
                     </lord-icon>
                 </icon>
             </a>
-            <a href="">
+            <a href="" target="_blank">
                 <icon>
                     <lord-icon class="icons"
                         src="https://cdn.lordicon.com/ofbvmdiz.json"
                         trigger="hover"
-                        colors="primary:#f49cc8,secondary:#e83a30"
+                        colors="primary:white,secondary:#e83a30"
                         >
                     </lord-icon>
                 </icon>
             </a>
         </div>
         <div id="right">
+            <a href="#main-top">Home</a>
             <a href="./colorPicker.html">Color Picker</a>
-            <a href="#main-alamnx">almanax</a>
+            <a href="#main-alamnx">Almanax<span style="font-weight: bold; color: rgb(236, 0, 51);">SOON</span></a>
         </div>
     </header>
 <!-- HTML -->
@@ -111,16 +163,45 @@
 
                 <img src="./imgs/icon.png" alt="item" srcset="">
                 <div class="data-alam">
-                    <h1>Almanax du <span>2023-08-17</span></h1>
-                    <h3><span>x4</span> fer</h3>
-                    <p>6 948K</p>
+                    <h1>Almanax du <span style="color: rgba(0, 196, 59, 0.438);">2023-08-17</span></h1>
+                    <h3><span style="color: rgb(255, 0, 76);font-weight: bold;">x4</span> fer</h3>
+                    <p style="color: yellow;">6 948K</p>
 
                 </div>
             </div>
             </div>
         </div>
     </div>
-<script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+
+    <div id="main-news">
+        <h1>Welcome To My WebSite</h1>
+    </div>
+    <div id="main-videos">
+        <div id="ls-videos">
+            <div id="videos">
+                <div id="vid-one">
+                    <div id="vid-text">
+                        <h2>this video for tuto Color Picker</h2>
+                        <p>best Picker </p>
+                        <a href="http://"> Click here</a>
+                    </div>
+                    <video controls src="videos/test.mp4" width="480px"></video>
+                </div>
+        
+                <div id="vid-two">
+                    <div id="vid-text">
+                        <h2>this video for tuto Color Picker</h2>
+                        <p>best Picker </p>
+                        <a href="http://"> Click here</a>
+                    </div>
+                    <video controls src="videos/test.mp4" ></video>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./scripts/scripts.js"></script>
+    <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
     <script>
         // JavaScript
 const inputElement = document.getElementById('inputElement');
