@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SayCula</title>
+        <!-- styles -->
+        <link rel="stylesheet" href="./styles/styles.css">
+        <link rel="stylesheet" href="./styles/header.css">
+        <link rel="stylesheet" href="./styles/arrow-down.css">
+        <link rel="stylesheet" href="./styles/search.css">
+        <link rel="stylesheet" href="./styles/alamax.css">
+        <link rel="stylesheet" href="./styles/main-videos.css">
+        <link rel="stylesheet" href="./styles/classes-skins.css">
+        <link rel="stylesheet" href="./styles/skins.css">
+    <Style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            text-decoration: none;
+        }
+        #main {
+            position: fixed;
+            top: 40%;
+            left: 45%;
+            right: 45%;
+            bottom: 40%;
+        }
+        #main h1{
+            font-size: 50px;
+            animation: anit 5s linear 0s infinite normal none;
+
+        }
+
+        @keyframes anit{
+            0% {
+            }
+            50% {
+                opacity: 0.3;
+                transform:  scale(1.5) rotate(10deg);
+                text-shadow: 4px 4px 6px #c79292;
+
+            }
+            100% {
+            }
+        }
+
+        #home {
+            color: white;
+            position: fixed;
+            background-color: var(--bg-header);
+            box-shadow: 4px 4px 6px #c79292;
+            padding: 20px 50px;
+            bottom: 20px;
+            clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+        }
+        #home:hover {
+            filter: drop-shadow(3px 6px 6px white);
+        }
+
+    </Style>
+  
+</head>
+<body>
+    <div id="main">
+        <h1>Your Offline</h1>
+    </div>
+    
+    <a href="https://saycula.github.io/dofus/" id="home">Back</a>
+</body>
+</html>

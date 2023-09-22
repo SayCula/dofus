@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SayCula</title>
+    <link rel="shortcut icon" href="./imgs/icon.png" type="image/x-icon">
+    <!-- site -->
+    <meta property="og:title" content="SayCula - Dofus">
+    <meta property="og:description" content="Dofus">
+    <meta property="og:image" content="./imgs/icon.png">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200&display=swap" rel="stylesheet">
+    <!-- styles fm-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magic/1.1.0/magic.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- styles -->
+    <link rel="stylesheet" href="./styles/styles.css">
+
+    <style>
+    @media only screen and (max-width: 600px) {
+
+            div#search {
+                width: 100%;
+        }
+
+    }
+
+    #targetElement{
+        display: flex;
+        text-decoration: none;
+        padding: 0px 10px 5px 4px;
+        font-weight: bold;
+        border: var(--whitesmoke) 3px solid;
+        border-radius: 0 19px 18px 0;
+        background-color: var(--whitesmoke);
+        color: #2c2c2c;
+        cursor: pointer;
+        align-content: center;
+        align-items: center;
+
+    }
+    div#search {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px;
+        width: 40%;
+    }  
+    #inpt-search {
+        width: 100%;
+    }
+    input[type=text] {
+        position: relative;
+        right: -1px;
+        width: 100%;
+        padding: 12px 20px;
+        border: var(--whitesmoke) 2px solid;
+        border-radius: 19px 0 0 18px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        color: var(--whitesmoke);
+    }
+    input:focus {
+        border: var(--whitesmoke) 2px solid;
+        background: none;
+        padding: 11px 20px;
+    }
+    input:focus::placeholder {
+        color: #796f6f;
+    }
+
+
+    </style>
+</head>
+<body>
+    <div id="main-top">
+ 
+    </div>
+
+    <script src="./scripts/posts/main-top.js"></script>
+    <script src="./scripts/posts/main-news.js"></script>
+    <script src="./scripts/posts/main-videos.js"></script>
+    <script src="./scripts/scripts.js"></script>
+    <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
+</body>
+</html>
