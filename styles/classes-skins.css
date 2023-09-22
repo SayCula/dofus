@@ -1,0 +1,39 @@
+div#classes-skins {
+    text-align: center;
+}
+/* Basic styling for the slideshow container */
+.slideshow-container {
+    max-width: 800px;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Styling for individual slides */
+.slide {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+}
+
+/* Styling for slide transition animation */
+.fade {
+    animation: fade 5s infinite;
+}
+
+@keyframes fade {
+    0%, 100% {
+        opacity: 0;
+    }
+    20%, 80% {
+        opacity: 1;
+    }
+}

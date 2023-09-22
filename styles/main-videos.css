@@ -1,0 +1,66 @@
+#main-videos {
+           
+}
+#ls-videos {
+    background-image: url(../imgs/bg-inside1.jpg);
+    background-position: center;
+    background-repeat:  no-repeat;
+    background-size: cover;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+#vid-one video{
+   position: relative;
+   right: -19rem;
+}
+#vid-one #vid-text{
+    position: relative;
+    top: 4rem;
+    left: -3rem;
+
+}
+#vid-one video{
+   position: relative;
+   right: -19rem;
+   top: -3rem;
+}
+#vid-two video{
+   position: relative;
+   right: -7rem;
+   top: -3rem;
+}
+#vid-two #vid-text{
+   position: relative;
+   top: 4rem;
+   left: -14rem;
+}
+#videos video {
+    width: 300px;
+
+}
+
+
+#vid-text a:link {
+    text-decoration: none;
+    background-color: crimson;
+    color: white;
+    padding: 0px 15px;
+    transition: all 0.3s;
+}
+
+
+#btn-change::before {
+    content: "انقر هنا"; /* Initial button text */
+    transition: content 0.3s; /* Add a smooth content transition effect */
+}
+
+#btn-change:hover::before {
+    content: "اضغط الآن"; /* New button text on hover */
+    cursor: pointer; /* Change cursor to a pointer on hover */
+}

@@ -3,7 +3,7 @@
     height: 51rem;
 }
 #alamax {
-    background-image: url(../imgs/bg-keyart.jpg);
+    background-image: url(/imgs/bg-keyart.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

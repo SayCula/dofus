@@ -9,12 +9,11 @@
 }
 .main-ColorPicker {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     align-content: center;
-    height: 45rem;
 
 }
 .imageInput {
@@ -60,6 +59,9 @@ input[type="color"]::-webkit-color-swatch-wrapper {
     align-items: center;
     flex-wrap: nowrap;
     flex-direction: row;
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
 }
 
 img {
@@ -118,6 +120,7 @@ button#copyButton:hover {
     height: 438px;
     align-items: center;
     justify-content: center;
+    margin: 20px;
 }
 #header-ColorPicker {
     display: flex;

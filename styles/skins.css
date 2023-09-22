@@ -1,0 +1,134 @@
+#main-news {
+    width: 100%;
+    text-align: center;
+    padding: 16rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* Adjust the width as needed */
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.slider img {
+    
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out; /* تأثير الانتقال بواسطة تحول (transform) */
+}
+
+.slider img:hover {
+    transform: scale(1.04); /* تكبير الصورة عند تمرير الماوس عليها */
+    animation: yourAnimation 5s linear 0s infinite normal none;
+
+}
+
+@keyframes yourAnimation{
+    0% {
+    }
+    40% {
+        filter: drop-shadow(0px 0px 2px rgb(255, 196, 0));
+    
+    }
+    80% {
+        filter: drop-shadow(0px 0px 6px  rgb(128, 51, 0));
+        
+    }
+    100% {
+    }
+}
+
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px 15px;
+    background: none;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 20px;
+    
+}
+.prev-btn:hover, .next-btn:hover {
+    background-color: #ffffff08;
+    text-shadow: 0px 5px 1px #830238;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.skins-send {
+    width: 50%;
+    text-align: center;
+    display: none;
+}
+.skins-send p {
+    margin: 10px;
+    
+}
+
+.skins-send input{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    
+}
+.skins-send input[type=text]{
+    width: 100%;
+    text-align: center;
+    background-color: rgba(83, 5, 31, 0.212);
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+}
+.skins-send input[type=button]{
+    width: 100%;
+    text-align: center;
+    border: 1px solid;
+    background-color:var(--darkcolor);
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: var(--btn-mouse);
+}
+.skins-send input[type=button]:hover {
+    background-color:;
+}
+.skins-send input::placeholder {
+    color:#fff;
+}
+.skins-send select {
+    width: 100%;
+    height: 5vh;
+    background-color:var(--darkcolor);
+    border: white 1px solid;
+    text-align: center;
+    font-size: large;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.skins-send option {
+    background-color: var(--darkcolor);
+}
