@@ -1,20 +1,21 @@
 const post = document.querySelector("#main-alamnx");
 
-post.innerHTML = `<div id="alamax">
-<div id="alam-center">
-    <div class="ls-alam">
+post.innerHTML = `
+<div id="alamax">
+    <div id="alam-center">
+        <div class="ls-alam">
 
-    <img src="${posts[0].img}" alt="item" srcset="">
-    <div class="data-alam">
-        <h1>Calculator Kamas to Doller or MAD</h1>
-        <input type="number" id="kamas" placeholder="Kamas/m">
-        <input type="number" id="money" placeholder="Money">
-        <button onclick="calculateSum()" id="calcul">Calculate</button>
-        <p id="result"></p>
+            <img src="${posts[0].img}" alt="item" srcset="">
+            <div class="data-alam">
+                <h1>Calculator Kamas to Doller or MAD</h1>
+                <input type="number" id="kamas" placeholder="Kamas/m">
+                <input type="number" id="money" placeholder="Money">
+                <button onclick="calculateSum()" id="calcul">Calculate</button>
+                <p id="result"></p>
 
+            </div>
+        </div>
     </div>
-</div>
-</div>
 </div>`;
 
 {/* <div id="alamax">
