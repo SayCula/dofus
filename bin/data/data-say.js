@@ -2,7 +2,7 @@ const posts = [
     {
       id: "a1",
       name: "alam",
-      img: "../imgs/icon.png",
+      img: "./imgs/icon.png",
       data: "2023-08-17",
       itemName: "fer",
       quantité: 4,
