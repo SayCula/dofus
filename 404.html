@@ -1,24 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>404 - Page Not Found</title>
+    <title>SayCula 404 - Page Not Found</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="./imgs/icon.png" type="image/x-icon">
+    <!-- site -->
+    <meta property="og:title" content="SayCula - Dofus">
+    <meta property="og:description" content="Dofus">
+    <meta property="og:image" content="./imgs/icon.png">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200&display=swap" rel="stylesheet">
+
+
+    <!-- styles -->
+    <link rel="stylesheet" href="./styles/styles.css">
 
     <style>
-        body {
+
+        main {
             text-align: center;
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+
         }
         
+        saycula a{
+            color:#d6707d;
+            font-size: larger;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
     <main>
         <h1>404 - Page Not Found</h1>
         <p>Sorry, the page you are looking for does not exist.</p>
-        <SayCula href="/index.html">BACK TO HOME</SayCula>
+        <SayCula><a href="">BACK TO HOME</a></SayCula>
     </main>
 
 </body>
