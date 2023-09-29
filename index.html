@@ -180,6 +180,26 @@
     <p id="on-off">Loading...</p>
 
     <script>
+
+                $(document).ready(function() {
+            // كود JavaScript الأصلي
+            function showMessage() {
+                alert("Hello, World!");
+            }
+
+            // تشفير الكود باستخدام UglifyJS
+            var obfuscatedCode = "function showMessage(){alert('Hello, World!')}";
+
+            // إضافة الكود المشفر إلى الصفحة
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.text = obfuscatedCode;
+            document.head.appendChild(script);
+
+            // استدعاء الدالة بعد تحميل الصفحة
+            showMessage();
+        });
+        
         let currentIndex = 0;
 const slides = document.querySelectorAll('.slider img');
 
@@ -200,6 +220,7 @@ function nextSlide() {
     }
     showSlide(currentIndex);
 }
+        
 
 function prevSlide() {
     currentIndex--;
@@ -217,21 +238,6 @@ function autoSlide() {
 
 autoSlide(); 
 
-                // 0.1v
-        $(document).ready(function() {
-        
-        var minifiedCode = "console.log('Hello, World!'); function init() { alert('Script Loaded!'); }";
-        
-        var script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.text = minifiedCode;
-
-        document.head.appendChild(script);
-
-        script.onload = function() {
-            init();
-        };
-        });
     </script>
     <script src="./bin/data/data-say.js"></script>
     <script src="./scripts/alamax.js"></script>
