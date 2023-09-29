@@ -15,8 +15,8 @@ function calculateSum() {
           var num2 = parseFloat(document.getElementById("money").value);
 
          
-          if (num1.length !== 2 || isNaN(num1)) {
-              alert("Please enter only two numbers (Kamas/m)");
+          if (num1.length !== 3 || isNaN(num1)) {
+              alert("Please enter only two numbers (Kamas/m) OR 001");
               return;
           }
 
