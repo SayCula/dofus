@@ -180,6 +180,43 @@
     <p id="on-off">Loading...</p>
 
     <script>
+        let currentIndex = 0;
+const slides = document.querySelectorAll('.slider img');
+
+function showSlide(index) {
+    slides.forEach((slide, i) => {
+        if (i === index) {
+            slide.style.display = 'block';
+        } else {
+            slide.style.display = 'none';
+        }
+    });
+}
+
+function nextSlide() {
+    currentIndex++;
+    if (currentIndex >= slides.length) {
+        currentIndex = 0;
+    }
+    showSlide(currentIndex);
+}
+
+function prevSlide() {
+    currentIndex--;
+    if (currentIndex < 0) {
+        currentIndex = slides.length - 1;
+    }
+    showSlide(currentIndex);
+}
+
+showSlide(currentIndex);
+function autoSlide() {
+    nextSlide();
+    setTimeout(autoSlide, 10000); 
+}
+
+autoSlide(); 
+
                 // 0.1v
         $(document).ready(function() {
         
@@ -207,7 +244,6 @@
     <script src="https://cdn.lordicon.com/bhenfmcm.js"></script>
     <script src="./bin/data/saycula.js"></script>
     <script src="./scripts/cal.js"></script>
-    <script src="./scripts/slide.js"></script>
 
 </body>
 </html>
