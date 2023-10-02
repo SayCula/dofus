@@ -1,33 +1,42 @@
-    .rune {
-        background: none;
-        background-size: contain;
-        background-repeat: no-repeat;
-        width: 150px;
-        height: 50px;
-        text-align: center;
-        color: rgb(3, 3, 3);
-        font-size: 16px;
-        border: none;
-        cursor: pointer;
-    }
-    .inexistant {
-        background-image: url('../imgs/icon.png');
-    }
-    .pa {
-        background-image: url('../imgs/rune/pa.png');
-    }
-    /* Feu */
-    .ine {
-        background-image: url('../imgs/rune/rune-ine.png');
-    }
-    .pa-ine {
-        background-image: url('../imgs/rune/rune-pa-ine.png');
-    }
-    .ra-ine {
-        background-image: url('../imgs/rune/rune-ra-ine.png');
-    }
 
-    /* Chance */
-    .cha {
-        background-image: url('../imgs/rune/rune.png');
-    }
+.inexistant {
+    background-image: url('../imgs/icon.png');
+}
+.btn-Col {
+    background-color: var(--darkcolor);
+    color:  var(--whitesmoke);
+}
+.btn-Col:hover {
+    background-color: var(--whitesmoke);
+    color: var(--darkcolor);
+    border: 1px solid var(--darkcolor) ;
+}
+
+.pa::after {
+    color: black !important;
+    content: "GaPa" !important; 
+}
+
+.pa:hover::before {
+    content: "100" !important; 
+}
+.pa:hover::after {
+    display: none !important; 
+}
+
+input.ga {
+    background: var(--ColorWLow);
+    color: var(--whitesmoke);
+}
+input.ga:hover {
+    background-color: var(--whitesmoke) ;
+    color: var(--darkcolor);
+}
+input.rune {
+    background: var(--ColorWLow);
+    color: var(--whitesmoke);
+}
+input.rune:hover {
+    background-color: var(--whitesmoke) ;
+    color: var(--darkcolor);
+}
