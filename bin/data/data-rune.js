@@ -1,35 +1,114 @@
 const Irune = document.querySelector("#itemList");
 
 Irune.innerHTML = `
+
+            <input type="button" class="btn-Col" value="Clear" onclick="clearFields()">
+            <input type="button" class="btn-Col" value="Undo" onclick="resetFields()">
+            
+           
+
             <!-- // RUNE FEU - INE -->
-            <section>
+            <input class="ga" value="GaPa" type="button" onclick="addValue(100)">
+            <input class="ga" value="GaPm" type="button" onclick="addValue(90)">
+            <input class="ga" value="po" type="button" onclick="addValue(51)">
+            <input class="ga" value="inov" type="button" onclick="addValue(30)">
 
-            <li>1<input class="rune ine" type="button" value="1" onclick="setPercentage(1)"></li>
-            <li>PA<input class="rune pa-ine" type="button" value="3" onclick="setPercentage(3)"></li>
-            <li>RA<input class="rune ra-ine" type="button" value="10" onclick="setPercentage(10)"></li>
-            </section>
+            <!-- // RUNE FEU - INE -->
+            
+            <input class="rune" value="1" type="button" onclick="setPercentage(1)">
+            <input class="rune" value="PA" type="button" onclick="setPercentage(3)">
+            <input class="rune" value="RA" type="button" onclick="setPercentage(10)">
+            
+            
             <!-- // RUNE Sa -->
-            <section>
-            <li>SA<input class="rune" type="button" value="3" onclick="setPercentage(3)"></li>
-            <li>PA SA<input class="rune" type="button" value="9" onclick="setPercentage(9)"></li>
-            <li>RA SA<input class="rune ra-ine" type="button" value="30" onclick="setPercentage(30)"></li>
-            </section>
+          
+            <input class="rune" type="button" value="SA" onclick="setPercentage(3)">
+            <input class="rune" type="button" value="PA SA" onclick="setPercentage(9)">
+            <input class="rune" type="button" value="RA SA" onclick="setPercentage(30)">
+            
+            
             <!-- // RUNE Prospe -->
-            <section>
-            <li>1<input class="rune" type="button" value="3" onclick="setPercentage(3)"></li>
-            <li>PA<input class="rune" type="button" value="9" onclick="setPercentage(9)"></li>
-            <li>pa<input class="rune pa" type="button"></li>
-            </section>
+            
+            
+            <input class="rune" type="button" value="Prospe" onclick="setPercentage(3)">
+            <input class="rune" type="button" value="PA Prospe" onclick="setPercentage(9)">
+            <input class="inexistant" type="button">
+            
             <!-- // RUNE Pui -->
-            <section>
-            <li>1<input class="rune" type="button" value="2" onclick="setPercentage(3)"></li>
-            <li>PA<input class="rune" type="button" value="6" onclick="setPercentage(9)"></li>
-            <li>RA<input class="rune inexistant" type="button" onclick="setPercentage(20)"></li>
-            </section>
-            <!-- // RUNE Ress -->
-            <section>
             
+            <input class="rune" value="Ré" type="button" onclick="setPercentage(1)">
+            <input class="rune" value="PA Ré" type="button" onclick="setPercentage(3)">
+            <input class="rune" value="Ré Per" type="button" onclick="setPercentage(1)">
 
-            </section>
-            
             `
+        
+            var selectedPercentage = 1;
+                  var previousResult = "";
+                  var operationsList = [];
+          
+                  function setPercentage(percentage) {
+                      selectedPercentage = percentage;
+                      calculate();
+                      var num1 = parseFloat(document.getElementById("num1").value);
+                      var result = (num1 - selectedPercentage);
+                      operationsList.push(`${num1} - ${selectedPercentage} = ${result.toFixed(2)}`);
+                      updateOperations();
+                      document.getElementById("num1").value = result.toFixed(2);
+                  }
+          
+                  function calculate() {
+                      var num1 = parseFloat(document.getElementById("num1").value);
+          
+                      if (!isNaN(num1)) {
+                          var result = (num1 - selectedPercentage);
+                          previousResult = result;
+                          document.getElementById("result").textContent = result.toFixed(2);
+                      } else {
+                          document.getElementById("result").textContent = "";
+                      }
+                  }
+          
+                  function clearFields() {
+                      document.getElementById("num1").value = "";
+                      document.getElementById("result").textContent = "";
+                  }
+          
+                  function resetFields() {
+                      document.getElementById("num1").value = previousResult.toFixed(2); // إعادة النتيجة السابقة
+                      document.getElementById("result").textContent = previousResult.toFixed(2);
+                      operationsList = [];
+                      updateOperations();
+                  }
+          
+                  function updateOperations() {
+                      var operationsDiv = document.getElementById("operations");
+                      operationsDiv.innerHTML = "<strong>history :</strong><br>" + operationsList.join("<br>");
+                  }
+          
+                  var filterInput = document.getElementById("filterInput");
+                  var itemList = document.getElementById("itemList");
+                  
+                  
+                  filterInput.addEventListener("input", function() {
+                      var filterValue = filterInput.value.toLowerCase(); 
+                      var items = itemList.getElementsByTagName("li");
+          
+                      
+                      for (var i = 0; i < items.length; i++) {
+                          var item = items[i];
+                          var text = item.textContent.toLowerCase();
+                          
+                          if (text.includes(filterValue)) {
+                              item.style.display = "block"; 
+                          } else {
+                              item.style.display = "none";
+                          }
+                      }
+                  });
+          
+                  function addValue(value) {
+                      var num1Field = document.getElementById("num1");
+                      num1Field.value = value.toString();
+                  }
+          
+           
