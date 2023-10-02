@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     transition: all 0.3s;
     text-decoration: none;
 }
+
 
 html {
     scroll-behavior: smooth;
@@ -16,8 +19,12 @@ html {
     --bg-header: #2222229f;
     --bg-header-hover: white;
     --ColorPink: #e5b0b2;
-    /* */
+    --ColorNone: rgba(255, 0, 0, 0);
+    --ColorWLow: rgba(255, 255, 255, 0.055)
+    
+    /* MOUSE */
     --btn-mouse: pointer;
+    --Normal-ms: default;
 }
 
 ::-webkit-scrollbar {
@@ -64,6 +71,21 @@ html {
         pointer-events: none;
     }
 
+    @media only screen and (max-width: 600px) {
+
+    body::before {
+        content: "";
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: #c55151;
+        left: 60%;
+        top: 74%;
+        filter: blur(150px);
+        pointer-events: none;
+    }
+
+}
     .logo img {
         width: 30%;
         -webkit-filter: drop-shadow(5px 5px 5px #222);
@@ -116,4 +138,8 @@ html {
 }
 ::placeholder {
     color: white;
+}
+
+button, input[type="button"] {
+    cursor: pointer;
 }
