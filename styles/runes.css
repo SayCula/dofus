@@ -42,7 +42,7 @@ input[type="button"] {
     text-align: center;
     border-radius: 5px;
     border: 1px solid #ccc;
-    
+    cursor: var(--btn-mouse);
 }
 #itemList {
     cursor: var(--btn-mouse);
