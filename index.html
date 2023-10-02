@@ -181,24 +181,7 @@
 
     <script>
 
-                $(document).ready(function() {
-            // كود JavaScript الأصلي
-            function showMessage() {
-                alert("Hello, World!");
-            }
 
-            // تشفير الكود باستخدام UglifyJS
-            var obfuscatedCode = "function showMessage(){alert('Hello, World!')}";
-
-            // إضافة الكود المشفر إلى الصفحة
-            var script = document.createElement('script');
-            script.type = 'text/javascript';
-            script.text = obfuscatedCode;
-            document.head.appendChild(script);
-
-            // استدعاء الدالة بعد تحميل الصفحة
-            showMessage();
-        });
         
         let currentIndex = 0;
 const slides = document.querySelectorAll('.slider img');
