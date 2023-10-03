@@ -4,7 +4,9 @@ Irune.innerHTML = `
 
             <input type="button" class="btn-Col" value="Clear" onclick="clearFields()">
             <input type="button" class="btn-Col" value="Undo" onclick="resetFields()">
-            
+            <input type="button" class="btn-Col" id ="plusBtn" value="+" onclick="plusInput()">
+
+                        
            
 
             <!-- // RUNE FEU - INE -->
@@ -32,7 +34,6 @@ Irune.innerHTML = `
             
             <input class="rune" type="button" value="Prospe" onclick="setPercentage(3)">
             <input class="rune" type="button" value="PA Prospe" onclick="setPercentage(9)">
-            <input class="inexistant" type="button">
             
             <!-- // RUNE Pui -->
             
@@ -41,6 +42,46 @@ Irune.innerHTML = `
             <input class="rune" value="Ré Per" type="button" onclick="setPercentage(1)">
 
             `
+
+           
+
+
+
+            // <li>1<input class="rune ine" type="button" onclick="setPercentage(1)"></li>
+            // <li>PA<input class="rune pa-ine" type="button" onclick="setPercentage(3)"></li>
+            // <li>RA<input class="rune ra-ine" type="button" onclick="setPercentage(10)"></li>
+            
+            // <!-- // RUNE Sa -->
+          
+            // <li>SA<input class="rune" type="button" onclick="setPercentage(3)"></li>
+            // <li>PA SA<input class="rune" type="button" onclick="setPercentage(9)"></li>
+            // <li>RA SA<input class="rune" type="button" onclick="setPercentage(30)"></li>
+            
+            // <!-- // RUNE Prospe -->
+            
+            // <li>Prospe<input class="rune" type="button" onclick="setPercentage(3)"></li>
+            // <li>PA Prospe<input class="rune" type="button" onclick="setPercentage(9)"></li>
+            // <li>inexistant<input class="rune inexistant" type="button" onclick="setPercentage(9)"></li>
+            
+            // <!-- // RUNE Pui -->
+            
+            // <li>Ré<input class="rune" type="button" onclick="setPercentage(1)"></li>
+            // <li>Pa Ré<input class="rune" type="button" onclick="setPercentage(3)"></li>
+            // <li>Ré Per Air<input class="rune" type="button" onclick="setPercentage(1)"></li>
+            
+            // <li>Ré Pou<input class="rune" type="button" onclick="setPercentage(1)"></li>
+            // <li>Pa Ré Pou<input class="rune" type="button" onclick="setPercentage(3)"></li>
+            // <li>Ré Per Air<input class="rune" type="button" onclick="setPercentage(1)"></li>
+            
+            
+            // <!-- // RUNE Ress -->
+            
+            // <section>
+            // <li>GaPa<input class="rune pa" type="button" onclick="addValue(100)"></li>
+            // <li>GaPm<input class="rune pm" type="button" onclick="addValue(90)"></li>
+            // <li>po<input class="rune po" type="button" onclick="addValue(51)"></li>
+            // <li>inov<input class="rune inov" type="button" onclick="addValue(30)"></li>
+            // </section>
         
             var selectedPercentage = 1;
                   var previousResult = "";
@@ -66,11 +107,15 @@ Irune.innerHTML = `
                       } else {
                           document.getElementById("result").textContent = "";
                       }
+                     
                   }
-          
                   function clearFields() {
                       document.getElementById("num1").value = "";
                       document.getElementById("result").textContent = "";
+                      var operationsDiv = document.getElementById("operations");
+
+                      operationsDiv.innerHTML = "<strong>history :</strong><br>" ;
+
                   }
           
                   function resetFields() {
@@ -85,30 +130,24 @@ Irune.innerHTML = `
                       operationsDiv.innerHTML = "<strong>history :</strong><br>" + operationsList.join("<br>");
                   }
           
-                  var filterInput = document.getElementById("filterInput");
-                  var itemList = document.getElementById("itemList");
-                  
-                  
-                  filterInput.addEventListener("input", function() {
-                      var filterValue = filterInput.value.toLowerCase(); 
-                      var items = itemList.getElementsByTagName("li");
-          
-                      
-                      for (var i = 0; i < items.length; i++) {
-                          var item = items[i];
-                          var text = item.textContent.toLowerCase();
-                          
-                          if (text.includes(filterValue)) {
-                              item.style.display = "block"; 
-                          } else {
-                              item.style.display = "none";
-                          }
-                      }
-                  });
+                 
           
                   function addValue(value) {
                       var num1Field = document.getElementById("num1");
                       num1Field.value = value.toString();
                   }
           
+                  function  plusInput(){
+
+                    const plusInput = document.querySelector("#num2")
+                    const plusBtn = document.querySelector("#plusBtn")
+                                        const result =  Number(plusInput.value) + Number(num1.value);
+                                        operationsList.push(`${num1.value} + ${plusInput.value} = ${result.toFixed(2)}`);
+                                        num1.value = result;
+                                        updateOperations()
+                                        document.getElementById("result").textContent = result.toFixed(2);
+                                        plusInput.value = "";
+                  }
+
+                                
            
