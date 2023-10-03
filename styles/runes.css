@@ -15,7 +15,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-        #num1,#num2  {
+#num1,#num2  {
             background-color: var(--ColorNone);
             padding: 10px 20px;
             font-size: 24px;
