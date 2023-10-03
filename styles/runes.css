@@ -15,16 +15,16 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#num1 {
-    background-color: var(--ColorNone);
-    padding: 10px 20px;
-    font-size: 24px;
-    text-align: right;
-    margin-bottom: 10px;
-    border: 1px solid var(--whitesmoke);
-    border-radius: 10px;
-    color: var(--whitesmoke);
-}
+        #num1,#num2  {
+            background-color: var(--ColorNone);
+            padding: 10px 20px;
+            font-size: 24px;
+            text-align: right;
+            margin-bottom: 10px;
+            border: 1px solid var(--whitesmoke);
+            border-radius: 10px;
+            color: white;
+        }
 
 #itemList {
     display: grid;
