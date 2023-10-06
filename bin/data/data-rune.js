@@ -3,7 +3,7 @@ const Irune = document.querySelector("#itemList");
 Irune.innerHTML = `
             <input type="button" class="btn-Col" value="Clear" onclick="clearFields()">
             <input type="button" class="btn-Col" value="Undo" onclick="resetFields()">
-            <input type="button" class="btn-Col" id ="plusBtn" value="+" onclick="plusInput()">
+            <input type="button" class="btn-Col noActive" id ="plusBtn" value="+"  onclick="plusInput()">
 
                         
            
@@ -83,48 +83,22 @@ Irune.innerHTML = `
            
 
 
+            const plusBtn = document.querySelector("#plusBtn")
+             plusBtn.addEventListener("click",addClass => {
+               plusBtn.classList.contains("active") ? 
+               (plusBtn.classList.add("noActive"),
+               plusBtn.classList.remove("active")) : 
+               (plusBtn.classList.add("active"),
+               plusBtn.classList.remove("noActive")) ;
+                 })
 
-            // <li>1<input class="rune ine" type="button" onclick="setPercentage(1)"></li>
-            // <li>PA<input class="rune pa-ine" type="button" onclick="setPercentage(3)"></li>
-            // <li>RA<input class="rune ra-ine" type="button" onclick="setPercentage(10)"></li>
-            
-            // <!-- // RUNE Sa -->
-          
-            // <li>SA<input class="rune" type="button" onclick="setPercentage(3)"></li>
-            // <li>PA SA<input class="rune" type="button" onclick="setPercentage(9)"></li>
-            // <li>RA SA<input class="rune" type="button" onclick="setPercentage(30)"></li>
-            
-            // <!-- // RUNE Prospe -->
-            
-            // <li>Prospe<input class="rune" type="button" onclick="setPercentage(3)"></li>
-            // <li>PA Prospe<input class="rune" type="button" onclick="setPercentage(9)"></li>
-            // <li>inexistant<input class="rune inexistant" type="button" onclick="setPercentage(9)"></li>
-            
-            // <!-- // RUNE Pui -->
-            
-            // <li>Ré<input class="rune" type="button" onclick="setPercentage(1)"></li>
-            // <li>Pa Ré<input class="rune" type="button" onclick="setPercentage(3)"></li>
-            // <li>Ré Per Air<input class="rune" type="button" onclick="setPercentage(1)"></li>
-            
-            // <li>Ré Pou<input class="rune" type="button" onclick="setPercentage(1)"></li>
-            // <li>Pa Ré Pou<input class="rune" type="button" onclick="setPercentage(3)"></li>
-            // <li>Ré Per Air<input class="rune" type="button" onclick="setPercentage(1)"></li>
-            
-            
-            // <!-- // RUNE Ress -->
-            
-            // <section>
-            // <li>GaPa<input class="rune pa" type="button" onclick="addValue(100)"></li>
-            // <li>GaPm<input class="rune pm" type="button" onclick="addValue(90)"></li>
-            // <li>po<input class="rune po" type="button" onclick="addValue(51)"></li>
-            // <li>inov<input class="rune inov" type="button" onclick="addValue(30)"></li>
-            // </section>
         
             var selectedPercentage = 1;
                   var previousResult = "";
                   var operationsList = [];
           
                   function setPercentage(percentage) {
+                    if (plusBtn.classList.contains("noActive")){                      
                       selectedPercentage = percentage;
                       calculate();
                       var num1 = parseFloat(document.getElementById("num1").value);
@@ -132,6 +106,29 @@ Irune.innerHTML = `
                       operationsList.push(`${num1} - ${selectedPercentage} = ${result.toFixed(2)}`);
                       updateOperations();
                       document.getElementById("num1").value = result.toFixed(2);
+
+                    } else if (plusBtn.classList.contains("active")){
+                      selectedPercentage = percentage;
+                      calculatePostive();
+                      var num1 = parseFloat(document.getElementById("num1").value);
+                      var result = (num1 + selectedPercentage);
+                      operationsList.push(`${num1} + ${selectedPercentage} = ${result.toFixed(2)}`);
+                      updateOperations();
+                      document.getElementById("num1").value = result.toFixed(2);
+                      
+                    }
+                  }
+                  function calculatePostive() {
+                      var num1 = parseFloat(document.getElementById("num1").value);
+          
+                      if (!isNaN(num1)) {
+                          var result = (num1 + selectedPercentage);
+                          previousResult = result;
+                          document.getElementById("result").textContent = result.toFixed(2);
+                      } else {
+                          document.getElementById("result").textContent = "";
+                      }
+                     
                   }
           
                   function calculate() {
@@ -174,17 +171,7 @@ Irune.innerHTML = `
                       num1Field.value = value.toString();
                   }
           
-                  function  plusInput(){
 
-                    const plusInput = document.querySelector("#num2")
-                    const plusBtn = document.querySelector("#plusBtn")
-                                        const result =  Number(plusInput.value) + Number(num1.value);
-                                        operationsList.push(`${num1.value} + ${plusInput.value} = ${result.toFixed(2)}`);
-                                        num1.value = result;
-                                        updateOperations()
-                                        document.getElementById("result").textContent = result.toFixed(2);
-                                        plusInput.value = "";
-                  }
 
                                 
            function filterItems() {
@@ -201,5 +188,13 @@ Irune.innerHTML = `
         buttons[i].style.display = "none";
       }
     }
+  }
+}
+function plusInput() {
+  var button = document.getElementById("plusBtn");
+  if (button.value === "-") {
+    button.value = "+";
+  } else {
+    button.value = "-";
   }
 }
