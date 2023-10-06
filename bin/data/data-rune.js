@@ -2,8 +2,8 @@ const Irune = document.querySelector("#itemList");
 
 Irune.innerHTML = `
             <input type="button" class="btn-Col" value="Clear" onclick="clearFields()">
-            <input type="button" class="btn-Col" value="Undo" onclick="resetFields()">
-            <input type="button" class="btn-Col noActive" id ="plusBtn" value="+"  onclick="plusInput()">
+            <input type="button" class="btn-Col" value="" onclick="resetFields()">
+            <input type="button" class="btn-Col noActive" id ="plusBtn" value="+" onclick="plusInput()">
 
                         
            
@@ -152,12 +152,7 @@ Irune.innerHTML = `
 
                   }
           
-                  function resetFields() {
-                      document.getElementById("num1").value = previousResult.toFixed(2); // إعادة النتيجة السابقة
-                      document.getElementById("result").textContent = previousResult.toFixed(2);
-                      operationsList = [];
-                      updateOperations();
-                  }
+
           
                   function updateOperations() {
                       var operationsDiv = document.getElementById("operations");
