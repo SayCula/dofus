@@ -2,8 +2,8 @@ const Irune = document.querySelector("#itemList");
 
 Irune.innerHTML = `
             <input type="button" class="btn-Col" value="Clear" onclick="clearFields()">
-            <input type="button" class="btn-Col" value="" onclick="resetFields()">
             <input type="button" class="btn-Col noActive" id ="plusBtn" value="+" onclick="plusInput()">
+            <button class="btn-Col" onclick="toggleInput()">Search</button>
 
                         
            
@@ -171,7 +171,7 @@ Irune.innerHTML = `
                                 
            function filterItems() {
   var input, filter, buttons, i;
-  input = document.getElementById("filterInput");
+  input = document.getElementById("inptSearch");
   filter = input.value.toUpperCase();
   buttons = document.getElementsByTagName("input");
 
@@ -191,5 +191,13 @@ function plusInput() {
     button.value = "+";
   } else {
     button.value = "-";
+  }
+}
+function toggleInput() {
+  var custDiv = document.getElementById("inptSearch");
+  if (custDiv.style.display === "none" || custDiv.style.display === "") {
+    custDiv.style.display = "block";
+  } else {
+    custDiv.style.display = "none";
   }
 }
