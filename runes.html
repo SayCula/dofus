@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SayCula Calculator </title>
+    <link rel="shortcut icon" href="./imgs/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="./styles/styles.css">
     <link rel="stylesheet" href="./styles/rune.css">
  
@@ -27,7 +28,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        #num1,#num2,#filterInput  {
+        #num1,#inptSearch  {
             background-color: var(--ColorNone);
             padding: 10px 20px;
             font-size: 24px;
@@ -47,7 +48,7 @@
             margin: 0;
         }
 
-        input[type="button"] {
+        button, input[type="button"] {
             width: 100%;
             padding: 15px;
             font-size: 18px;
@@ -106,15 +107,26 @@
         .menu a {
             color: white;
         }
+        #inptSearch {
+            display: none;
+        }
+        .main-Inpt {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
     </style>
 </head>
 <body>
 <div class="menu"><a href="./index.html">Go back home</a></div>
         <div class="calculator">
         <di id="main-cal">
-            <input type="text" id="num1" placeholder="poids">
-            <br>
-            <input type="text" id="filterInput" oninput="filterItems()" placeholder="Filter">
+            <div class="main-Inpt">
+                <input type="text" id="num1" placeholder="poids">
+                
+                <input type="text" id="inptSearch" oninput="filterItems()" placeholder="Search">
+                
+            </div>
 
             <p id="rslt">The result: <span id="result"></span></p>
 
