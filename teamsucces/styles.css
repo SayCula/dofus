@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s;
+}
+:root {
+    --ColorPr: black;
+    --ColorDe: aliceblue;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: rgb(1, 9, 17);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+.glass{
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border:1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+.main {
+    width: 100%;
+    margin: 10rem;
+    color: var(--ColorPr);
+    border-radius: 5px;
+    padding: 0 2rem;
+}
+#customers {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+#customers th{
+    text-align: left;
+    padding: 10px;
+    background-color: var(--ColorPr);
+    color: var(--ColorDe);
+}
+
+#customers tr:nth-of-type(2n){
+  color: var(--ColorDe);
+  background-color: #3f51b5;
+}
+#customers tr{
+  background-color: #3f51b57a;
+  color: var(--ColorDe);
+}
+#customers  td{
+  padding: 10px ;
+  
+}
+
+.main-left a {
+  color: aliceblue;
+  text-decoration: none;
+  padding: 0 10px;
+}
+.main-left a:hover {
+  color: rgb(70, 157, 233);
+}
+.main-left {
+  padding: 15px ;
+}
+#teamsList {
+  margin-bottom: 1rem;
+  overflow-y: scroll;
+  height: 500px;
+}
+caption {
+  padding: 0.5rem;
+  color: #fff;
+  border-bottom: none;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: #000;
+}
+::-webkit-scrollbar, #teamsList::-webkit-scrollbar{
+  width: 0.5rem;
+  transition: all 0.50s ease;
+}
+::-webkit-scrollbar-track, #teamsList::-webkit-scrollbar-track{
+background: hsla(60, 1%, 25%, 0.233);
+margin-block: .5em;
+}
+::-webkit-scrollbar-thumb, #teamsList::-webkit-scrollbar-thumb{
+background: hsla(60, 1%, 25%, 0.749);
+}
+::-webkit-scrollbar-thumb:hover, #teamsList::-webkit-scrollbar-thumb:hover{
+background: hsla(60, 1%, 25%, 0.233);
+}
+input {
+  background: none;
+  padding: 10px;
+  color: rgba(240, 248, 255, 0.297);
+  margin: 10px;
+  border: 1px rgba(240, 248, 255, 0.297) solid;
+}
+input:focus {
+  background: darkcyan;
+  color: aliceblue;
+  /* border: 1px rgba(240, 248, 255, 0.697) solid; */
+}
+.myInputs , .myInputsDate {
+  display: flex;
+}
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+::placeholder{
+  color: rgba(240, 248, 255, 0.297);
+}
+:focus::placeholder {
+  color: rgb(240, 248, 255) ;
+}
+#btnAddTeam {
+  background-color: darkcyan;
+}
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: aliceblue;
+  padding: 10px 20px;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
